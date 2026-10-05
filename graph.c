@@ -40,11 +40,32 @@ Graph* createGraph() {
 
 void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
+    if (map_search(g->adjacencyMap, (void*) label) != NULL) return;
+    char* labelCopy = strdup(label);
+    if (labelCopy == NULL) return;
+    List* edges = list_create();
+    if (edges == NULL) {
+        free(labelCopy);
+        return;
+    }
+    map_insert(g->adjacencyMap, labelCopy, edges);
 
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
+    MapPair* pair = map_search(g->adjacencyMap, (void*) src);
+    if (pair == NULL) return;
+    Edge* edge = (Edge*)malloc(sizeof(Edge));
+    if ( edge == NULL) return;
+    edge->weight = weight;
+    edge->target = strdup(dest);
+    if (edge->target == NULL)
+    {
+        free(edge);
+        return;
+    }
+     list_pushBack((List*) pair->value, edge);
 
 }
 
