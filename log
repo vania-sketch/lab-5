@@ -6,3 +6,29 @@ Fri May  8 10:07:21 PM UTC 2026:
  tests:  0|6
 ========================================
 36e8bf5
+Mon Oct  5 01:51:38 AM UTC 2026: 
+ graph.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:30:17: error: ‘Grap’ undeclared (first use in this function); did you mean ‘Graph’?
+   30 |     Graph* g = (Grap*) malloc(sizeof(Graph))
+      |                 ^~~~
+      |                 Graph
+graph.c:30:17: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:30:22: error: expected expression before ‘)’ token
+   30 |     Graph* g = (Grap*) malloc(sizeof(Graph))
+      |                      ^
+graph.c:33:5: error: implicit declaration of function ‘ig’ [-Wimplicit-function-declaration]
+   33 |     ig (g->adjacencyMap == NULL){
+      |     ^~
+graph.c:33:33: error: expected ‘;’ before ‘{’ token
+   33 |     ig (g->adjacencyMap == NULL){
+      |                                 ^
+      |                                 ;
+graph.c:39:1: error: control reaches end of non-void function [-Werror=return-type]
+   39 | }
+      | ^
+cc1: all warnings being treated as errors
+aa3859b
