@@ -108,3 +108,15 @@ Mon Oct  5 02:13:34 AM UTC 2026:
  tests:  12|0
 ========================================
 daf6931
+Mon Oct  5 02:24:36 AM UTC 2026: 
+ graph.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:102:20: error: implicit declaration of function ‘list_Create’; did you mean ‘list_create’? [-Wimplicit-function-declaration]
+  102 |     List* labels = list_Create();
+      |                    ^~~~~~~~~~~
+      |                    list_create
+graph.c:102:20: error: initialization of ‘List *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+d3ee1fc
