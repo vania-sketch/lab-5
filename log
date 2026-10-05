@@ -58,3 +58,18 @@ graph.c:39:1: error: control reaches end of non-void function [-Werror=return-ty
       | ^
 cc1: all warnings being treated as errors
 a9d18c3
+Mon Oct  5 01:52:19 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:30:17: error: ‘Grap’ undeclared (first use in this function); did you mean ‘Graph’?
+   30 |     Graph* g = (Grap*) malloc(sizeof(Graph));
+      |                 ^~~~
+      |                 Graph
+graph.c:30:17: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:30:22: error: expected expression before ‘)’ token
+   30 |     Graph* g = (Grap*) malloc(sizeof(Graph));
+      |                      ^
+0b48236

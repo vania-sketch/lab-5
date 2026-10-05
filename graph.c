@@ -30,7 +30,7 @@ Graph* createGraph() {
     Graph* g = (Grap*) malloc(sizeof(Graph));
     if(g == NULL) return NULL;
     g->adjacencyMap = map_create(is_equal_string);
-    ig (g->adjacencyMap == NULL){
+    if (g->adjacencyMap == NULL){
         free(g);
         return NULL;
     }
