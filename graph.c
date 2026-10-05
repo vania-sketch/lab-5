@@ -105,7 +105,7 @@ List* getAdjacentLabels(Graph* g, const char* label) {
          list_pushBack(labels, e->target);
      }
 
-    return NULL; 
+    return labels; 
 }
 
 void destroyGraph(Graph* g) {
